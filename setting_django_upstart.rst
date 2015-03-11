@@ -1,3 +1,6 @@
+Server instrumentation with Django and upstart
+==============================================
+
 Create the init script for upstart in ``/etc/init/upstart-job.conf`` 
 ::
   start on runlevel [2345]
@@ -25,8 +28,7 @@ Create the init script for upstart in ``/etc/init/upstart-job.conf``
     --log-file=$LOGFILE 2>>$LOGFILE
   end script
 
-
-Note that the PORT=8002 must match the number you configured in server configuration. In case you are running multiple websites on the same machine you'll have to increment this number accordingly.
+.. note:: PORT=8002 must match the number you configured in server configuration. In case you are running multiple websites on the same machine you'll have to increment this number accordingly.
 
 Add new system service
 ::
