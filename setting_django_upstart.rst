@@ -11,7 +11,7 @@ Create the init script for upstart in ``/etc/init/upstart-job.conf``
   script
     NAME=trenpa
     PORT=8002
-    NUM_WORKERS=2
+    NUM_WORKERS=3
     TIMEOUT=120
     USER=shop
     GROUP=shop
@@ -29,6 +29,8 @@ Create the init script for upstart in ``/etc/init/upstart-job.conf``
   end script
 
 .. note:: PORT=8002 must match the number you configured in server configuration. In case you are running multiple websites on the same machine you'll have to increment this number accordingly.
+
+.. note:: As a rule-of-thumb set the --workers (NUM_WORKERS) according to the following formula: 2 * CPUs + 1. The idea being, that at any given time half of your workers will be busy doing I/O. For a single CPU machine it would give you 3.
 
 Add new system service
 ::
