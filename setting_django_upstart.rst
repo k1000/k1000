@@ -1,5 +1,5 @@
-Server instrumentation with Django and upstart
-==============================================
+Server instrumentation with upstart, gunicorn, Django
+=====================================================
 
 Create the init script for upstart in ``/etc/init/upstart-job.conf`` 
 ::
